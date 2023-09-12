@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Chuyển đổi tiền tệ</title>
 </head>
 <body>
-
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="number" />
+            </td>
+            <td>
+                <select id="selectMoney1">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="selectMoney2">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="Convert()">Convert</button>
+            </td>
+        </tr>
+    </table>
+<script>
+    function Convert() {
+        let nhapvao = document.getElementById("number").value;
+        let tien1 = document.getElementById('selectMoney1').value;
+        let tien2 = document.getElementById('selectMoney2').value;
+        if (tien1 === tien2){
+            alert(nhapvao);
+        }
+        if (tien1 === 'VND' && tien2 === 'USD'){
+            alert(nhapvao/24000);
+        }
+        if (tien1 === 'USD' && tien2 === 'VND'){
+            alert(nhapvao*24000);
+        }
+    }
+</script>
 </body>
 </html>

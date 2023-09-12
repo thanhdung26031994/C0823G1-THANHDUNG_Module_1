@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng Dụng Máy Tính</title>
+</head>
+<body>
+    <h1>Caculator</h1>
+    <table>
+        <tr>
+            <th colspan="2">
+                <input type="number" id="number1" />
+            </th>
+            <th colspan="2">
+                <input type="number" id="number2" />
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="Add()">Addition(+)</button>
+            </td>
+            <td>
+                <button onclick="Sub()">Subtraction(-)</button>
+            </td>
+            <td>
+                <button onclick="Mul()">Multiplication(X)</button>
+            </td>
+            <td>
+                <button onclick="Divi()">Division(/)</button>
+            </td>
+        </tr>
+    </table>
+    </br>
+    <p id="result"></p>
+<script>
+    function Add() {
+        let numberOne = document.getElementById('number1').value;
+        let numberTwo = document.getElementById('number2').value;
+        let result = Number(numberOne) + Number(numberTwo);
+        document.getElementById('result').innerHTML = result;
+    }
+    function Sub() {
+        let numberOne = document.getElementById('number1').value;
+        let numberTwo = document.getElementById('number2').value;
+        let result = Number(numberOne) - Number(numberTwo);
+        document.getElementById('result').innerHTML = result;
+    }
+    function Mul() {
+        let numberOne = document.getElementById('number1').value;
+        let numberTwo = document.getElementById('number2').value;
+        let result = Number(numberOne) * Number(numberTwo);
+        document.getElementById('result').innerHTML = result;
+    }
+    function Divi() {
+        let numberOne = document.getElementById('number1').value;
+        let numberTwo = document.getElementById('number2').value;
+        let result = Number(numberOne) / Number(numberTwo);
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</body>
+</html>
