@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</title>
+</head>
+<body>
+    <script>
+        let test = Number(prompt('Điểm bài thi kiểm tra:'));
+        let midterm = Number(prompt('Điểm bài thi giữa kỳ:'));
+        let endOfTerm = Number(prompt('Điểm bài thi cuối kỳ:'));
+
+        let mediumScore = (test + midterm + endOfTerm)/3;
+        if (mediumScore >= 8){
+            document.write('Điểm trung bình là:' + mediumScore + '<br>Bạn Đạt học sinh giỏi');
+        }else if (mediumScore >= 6){
+            document.write('Điểm trung bình là:' + mediumScore + '<br>Bạn Đạt học sinh khá');
+        }else if (mediumScore >= 3.5){
+            document.write('Điểm trung bình là:' + mediumScore + '<br>Bạn Đạt học sinh trung bình');
+        }else {
+            document.write('Điểm trung bình là:' + mediumScore + '<br>Bạn Đạt học sinh yếu');
+        }
+
+    </script>
+</body>
+</html>

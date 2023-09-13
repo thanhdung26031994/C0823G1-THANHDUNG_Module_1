@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</title>
+</head>
+<body>
+    <script>
+        let integerA = parseInt(prompt('Nhập số nguyên thứ nhất: '));
+        let integerB = parseInt(prompt('Nhập số nguyên thứ hai: '));
+        let integerC = parseInt(prompt('Nhập số nguyên thứ ba: '));
+        let max = integerA;
+        if (max > integerB > integerC){
+            document.write('Số Nguyên Thứ Nhất Là Lớn Nhất');
+        }else if (integerB > max > integerC){
+            document.write('Số Nguyên Thứ Hai Là Lớn Nhất');
+        }else if (max == integerB == integerC){
+            document.write('Cả 3 Số Nguyên Là Lớn Nhất');
+        }else {
+            document.write('Số Nguyên Thứ Ba Là Lớn Nhất');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 1.</title>
+</head>
+<body>
+    <script>
+        let a = Number(prompt('Nhập a'));
+        let b = Number(prompt('Nhập b'));
+        let experience; //nghiệm của phương trinh
+        if (a === 0){
+            if (b === 0){
+                document.write('Phương trình vô số nghiệm');
+            }else {
+                document.write('Phương trình vô nghiệm');
+            }
+        }else {
+            experience = - b / a;
+        }
+        document.write('Nghiệm của phương trình là: ' + experience);
+
+        /* Nhập hệ số a và b của phương trình
+        let a = Number(prompt("Nhập hệ số a: "));
+        let b = Number(prompt("Nhập hệ số b: "));
+        let x;
+        switch (a) {
+            case 0:
+                // Phương trình vô nghiệm
+                x = NaN;
+                break;
+            default:
+                // Phương trình có nghiệm
+                x = -b / a;
+                break;
+        }
+
+        // In kết quả ra màn hình
+        document.write("Giải pháp của phương trình là: x = " + x);
+*/
+    </script>
+</body>
+</html>

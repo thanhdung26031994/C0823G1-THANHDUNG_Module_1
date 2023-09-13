@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</title>
+</head>
+<body>
+    <script>
+        let sales = Number(prompt('Nhập doanh số bán hàng:'));
+        let rose = 0; //hoa hồng
+        if (sales <= 1000000){
+            rose = sales * 0.05;
+        }else if (sales <= 3000000){
+            rose = sales * 0.10;
+        }else {
+            rose = sales * 0.20;
+        }
+        document.write("Hoa hồng nhận được là: " + rose);
+    </script>
+</body>
+</html>

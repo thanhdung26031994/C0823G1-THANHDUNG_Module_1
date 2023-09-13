@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b</title>
+</head>
+<body>
+    <script>
+        let squaredAngleA = Number(prompt('Nhập độ dài cạnh góc vuông a: '));
+        let squaredAngleB = Number(prompt('Nhập độ dài cạnh góc vuông b: '));
+        let squareSideArea; //diện tích cạnh góc vuông
+        if (squaredAngleA > 0 && squaredAngleB > 0){
+            squareSideArea = squaredAngleA * squaredAngleB / 2;
+        }else{
+            document.write('Giá trị nhập vào là số dương');
+        }
+        document.write('Diện tích cạnh góc vuông là: ' + squareSideArea);
+    </script>
+</body>
+</html>

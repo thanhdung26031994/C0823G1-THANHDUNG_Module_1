@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</title>
+</head>
+<body>
+    <script>
+        let cutLength = parseInt(prompt('Nhập chiều dài của cạnh: '));
+        let edgeWidth = parseInt(prompt('Nhập chiều rộng của cạnh: '));
+        let rectangularArea;
+        if (cutLength > 0 && edgeWidth > 0){
+            rectangularArea = cutLength * edgeWidth;
+        }else {
+            document.write('Nhập giá trị cả 2 số là số dương');
+        }
+        document.write('Diện tích hình chữ nhật là: ' + rectangularArea);
+    </script>
+</body>
+</html>
