@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt('Nhập a:'));
+        let b = parseInt(prompt('Nhập b:'));
+        let c = parseInt(prompt('Nhập c:'));
+
+        if (a, b, c > 0){
+            if (a + b > c){
+                if (a + c > b){
+                    if (b + c > a){
+                        document.write('a, b, c là Cạnh của góc vuông.');
+                    }else {
+                        document.write('a, b, c không phải là cạnh góc vuông.');
+                    }
+                }else {
+                    document.write('a, b, c không phải là cạnh góc vuông.');
+                }
+            }else {
+                document.write('a, b, c không phải là cạnh góc vuông.');
+            }
+        }else {
+            document.write('a, b, c không phải là cạnh góc vuông.');
+        }
+
+    </script>
+</body>
+</html>

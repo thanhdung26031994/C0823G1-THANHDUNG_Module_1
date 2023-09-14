@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Máy Tính Cơ Bản</title>
+    <style>
+        button{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" cellpadding="0" cellspacing="20">
+        <tr>
+            <td colspan="4" style="text-align: right; height: 50px">
+                <span id="result"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="calculator('1')">1</button>
+                <button type="button" onclick="calculator('2')">2</button>
+                <button type="button" onclick="calculator('3')">3</button>
+                <button type="button" onclick="calculator('+')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="calculator('4')">4</button>
+                <button type="button" onclick="calculator('5')">5</button>
+                <button type="button" onclick="calculator('6')">6</button>
+                <button type="button" onclick="calculator('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="calculator('7')">7</button>
+                <button type="button" onclick="calculator('8')">8</button>
+                <button type="button" onclick="calculator('9')">9</button>
+                <button type="button" onclick="calculator('*')">X</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="calculator('C')">C</button>
+                <button type="button" onclick="calculator('0')">0</button>
+                <button type="button" onclick="calculator('=')">=</button>
+                <button type="button" onclick="calculator('/')">/</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function calculator(x) {
+            let result = document.getElementById('result').innerText;
+            console.log(x);
+            switch (x){
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                    result = result + x;
+                    break;
+                case '=':
+                    result = eval(result);
+                    break;
+                case 'C':
+                    result = '';
+                    break;
+            }
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>

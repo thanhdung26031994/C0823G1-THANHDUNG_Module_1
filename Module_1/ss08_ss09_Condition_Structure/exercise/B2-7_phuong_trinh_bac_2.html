@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2.</title>
+</head>
+<body>
+    <script>
+        // Nhập các hệ số của phương trình
+        let a = Number(prompt("Nhập hệ số a: "));
+        let b = Number(prompt("Nhập hệ số b: "));
+        let c = Number(prompt("Nhập hệ số c: "));
+
+        // Kiểm tra xem các hệ số của phương trình có phải là số nguyên hay không
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            document.write("Giá trị nhập từ người dùng không phải là số nguyên.");
+        }
+
+        // Tính delta
+        let delta = b * b - 4 * a * c;
+        let x1, x2;
+        switch (delta) {
+            case 0:
+                // Có một nghiệm
+                x1 = -b / (2 * a);
+                break;
+            case 1:
+                // Có hai nghiệm thực
+                // Math.sqrt là phương trình trả về căn bậc 2 của 1 số
+                x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                break;
+            default:
+                // Không có nghiệm thực
+                x1 = NaN;
+                x2 = NaN;
+                break;
+        }
+
+        // In kết quả ra màn hình
+        document.write("Giải pháp của phương trình là: x1 = " + x1 + ", x2 = " + x2);
+
+    </script>
+ <!--   <h1>Phương trình bậc 2</h1>
+    <table>
+        <tr>
+            <td>
+                Nhập a:<input type="text" id="isA" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nhập b:<input type="text" id="isB" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nhập c:<input type="text" id="isC" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="equation()">Kết quả</button>
+                <br>
+                <br>
+                <p id="result"></p>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function equation() {
+            let a = document.getElementById('isA').value;
+            let b = document.getElementById('isB').value;
+            let c = document.getElementById('isC').value;
+            let detal = Math.pow(b,2) - 4 * a * c;
+            console.log(detal)
+            if (detal < 0){
+                document.getElementById('result').innerHTML = `Phương trình vô nghiệm`;
+            }else if (detal == 0){
+                let x1 = -b / (2*a);
+                document.getElementById('result').innerHTML = `Phương trình có nghiệm kép là ${x1}`;
+            }else {
+                let x1 = (-b + Math.sqrt(detal)) / (2*a);
+                let x2 = (-b - Math.sqrt(detal)) / (2*a);
+                document.getElementById('result').innerHTML =
+                    `Phương trình có 2 nghiệm là: x1 = ${x1} và x2 = ${x2}`;
+            }
+        }
+    </script>-->
+</body>
+</html>

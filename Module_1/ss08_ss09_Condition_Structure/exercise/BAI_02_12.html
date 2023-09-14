@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</title>
+</head>
+<body>
+    <script>
+        let getALoan = parseInt(prompt('Nhập khoản tiền muốn vay: '));
+        let numberYearLoan = parseInt(prompt('Nhập số năm vay: '));
+        let interestAndPrincipal;
+        let year = numberYearLoan * 12;
+        if(0 < numberYearLoan <= 10){
+            interestAndPrincipal = getALoan * Math.pow((1 + 0.1/numberYearLoan),year);
+            document.write('Số tiền bạn cần trả cả lãi và gốc là: ' + interestAndPrincipal);
+        }else if (numberYearLoan <= 30){
+            interestAndPrincipal = getALoan * Math.pow((1 + 0.05/numberYearLoan),year);
+            document.write('Số tiền bạn cần trả cả lãi và gốc là: ' + interestAndPrincipal);
+        }
+    </script>
+</body>
+</html>
