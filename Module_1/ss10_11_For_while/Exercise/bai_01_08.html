@@ -5,31 +5,46 @@
     <title>Title</title>
 </head>
 <body>
-    <p>
-        <input type="button" onclick="game()" value="Bắt Đầu"/>
-    </p>
+<p>
+    <input type="button" onclick="choi()" value="Bắt Đầu"/>
+</p>
 <script>
-    function game() {
-        for (;;) {
-            // Hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
-            let min = prompt("Bạn muốn đoán trong khoảng nào (min)?");
-            let max = prompt("Bạn muốn đoán trong khoảng nào (max)?");
+    function choi() {
+        // Hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
+        let min = prompt("Bạn muốn đoán trong khoảng nào (min)?");
+        let max = prompt("Bạn muốn đoán trong khoảng nào (max)?");
 
-            // Chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn
-            let number = Math.floor(Math.random() * (max - min + 1)) + min;
+        // Chọn ra số ngẫu nhiên trong khoảng mà người dùng chọn
+        let soNgauNhien = Math.floor(Math.random() * (max - min + 1)) + min;
 
+        // Tạo biến đếm số lần đoán
+        let soLanDoan = 1;
+
+        // Vòng lặp for while để người dùng có thể đoán lại nhiều lần
+        while (soLanDoan <= 3) {
             // Hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán
-            let guess = prompt("Hãy đoán số:");
+            let soDoan = prompt("Mời bạn đoán số:");
 
             // Lấy kết quả và so sánh với giá trị ngẫu nhiên
-            if (guess === number) {
+            let ketQua = Number(soDoan);
+            if (ketQua === soNgauNhien) {
                 // Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi
-                alert("Chúc mừng! Bạn đã đoán đúng!");
+                alert("Chúc mừng bạn đã đoán đúng!");
                 break;
             } else {
                 // Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại
-                alert(guess > number ? "Bạn đoán quá thấp!" : "Bạn đoán quá cao!");
+                if (ketQua > soNgauNhien) {
+                    alert("Số bạn đoán lớn hơn số ngẫu nhiên!");
+                } else {
+                    alert("Số bạn đoán bé hơn số ngẫu nhiên!");
+                }
             }
+            soLanDoan++;
+        }
+
+        // Nếu người dùng đoán sai hết 3 lần thì hiển thị thông báo thua
+        if (soLanDoan > 3) {
+            alert("Bạn đã thua!");
         }
     }
 </script>
