@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // Lặp qua các số từ 1 đến 100
+        for (let i = 1; i <= 100; i++) {
+            // Kiểm tra nếu số chia hết cho 3 và 5
+            if (i % 3 === 0 && i % 5 === 0) {
+                // In "FizzBuzz"
+                document.write('FizzBuzz <br>');
+            } else if (i % 3 === 0) {
+                // In "Fizz"
+                document.write('Fizz <br>');
+            } else if (i % 5 === 0) {
+                // In "Buzz"
+                document.write('Buzz<br>');
+            } else {
+                // In số đó
+                document.write(`${i} <br>`);
+            }
+        }
+    </script>
+</body>
+</html>

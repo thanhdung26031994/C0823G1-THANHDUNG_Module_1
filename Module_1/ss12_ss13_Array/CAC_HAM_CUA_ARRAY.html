@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Thêm một phần tử vào cuối mảng
+    const array = [1, 2, 3];
+    array.push(4);
+    console.log(array); // [1, 2, 3, 4]
+
+    // Loại bỏ một phần tử khỏi cuối mảng
+    array.pop();
+    console.log(array); // [1, 2, 3]
+
+    // Thêm một phần tử vào đầu mảng
+    array.unshift(0);
+    console.log(array); // [0, 1, 2, 3]
+
+    // Loại bỏ một phần tử khỏi đầu mảng
+    array.shift();
+    console.log(array); // [1, 2, 3]
+
+    // Nối hai mảng với nhau
+    const array1 = [1, 2, 3];
+    const array2 = [4, 5, 6];
+    const newArray = array1.concat(array2);
+    console.log(newArray); // [1, 2, 3, 4, 5, 6]
+
+    // Tạo một mảng mới từ một phần của mảng hiện có
+    const array = [1, 2, 3, 4, 5, 6];
+    const newArray = array.slice(2, 5);
+    console.log(newArray); // [3, 4, 5]
+
+    // Trả về vị trí của một phần tử trong mảng
+    const array = [1, 2, 3, 4, 5];
+    const index = array.indexOf(3);
+    console.log(index); // 2
+
+    // Trả về vị trí cuối cùng của một phần tử trong mảng
+    const array = [1, 2, 3, 4, 5];
+    const index = array.lastIndexOf(3);
+    console.log(index); // 4
+
+    // Kiểm tra xem một phần tử có tồn tại trong mảng hay không
+    const array = [1, 2, 3, 4, 5];
+    const exists = array.includes(3);
+    console.log(exists); // true
+
+    // Thực hiện một hành động đối với từng phần tử trong mảng
+    const array = [1, 2, 3, 4, 5];
+    array.forEach((element) => {
+        console.log(element);
+    });
+
+</script>
+</body>
+</html>

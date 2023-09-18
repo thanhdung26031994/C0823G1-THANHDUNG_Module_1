@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển Thị Các Số Nguyên Tố Đầu Tiên</title>
+</head>
+<body>
+<script>
+    let number = prompt('Nhập n dãy số nguyên tố');
+    let result = "";
+    let n=2;
+
+    for (let i =1; i <= number; n++){
+        let isPrime = true;
+        for (let j = 2; j < n; j++){
+            if (n%j === 0){
+                isPrime = false;
+            }
+        }
+        if (isPrime === true){
+            result += n + "</br>";
+            i++;
+        }
+    }
+    document.write(result);
+
+</script>
+</body>
+</html>

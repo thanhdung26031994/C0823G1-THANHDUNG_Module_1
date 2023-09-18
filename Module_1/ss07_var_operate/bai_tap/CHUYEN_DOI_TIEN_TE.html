@@ -28,23 +28,23 @@
                 </select>
             </td>
             <td>
-                <button onclick="Convert()">Convert</button>
+                <button onclick="convert()">Convert</button>
             </td>
         </tr>
     </table>
 <script>
-    function Convert() {
-        let nhapvao = document.getElementById("number").value;
-        let tien1 = document.getElementById('selectMoney1').value;
-        let tien2 = document.getElementById('selectMoney2').value;
-        if (tien1 === tien2){
-            alert(nhapvao);
+    function convert() {
+        let input = document.getElementById("number").value;
+        let moneyOne = document.getElementById('selectMoney1').value;
+        let moneyTwo = document.getElementById('selectMoney2').value;
+        if (moneyOne === moneyTwo){
+            alert(input);
         }
-        if (tien1 === 'VND' && tien2 === 'USD'){
-            alert(nhapvao/24000);
+        if (moneyOne === 'VND' && moneyTwo === 'USD'){
+            alert(input/24000);
         }
-        if (tien1 === 'USD' && tien2 === 'VND'){
-            alert(nhapvao*24000);
+        if (moneyOne === 'USD' && moneyTwo === 'VND'){
+            alert(input*24000);
         }
     }
 </script>

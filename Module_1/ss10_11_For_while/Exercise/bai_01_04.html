@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số đầu tiên trong dãy fibonacci chia hết cho 5</title>
+</head>
+<body>
+    <script>
+        // Khởi tạo hai số hạng đầu tiên của dãy Fibonacci
+        let a = 0;
+        let b = 1;
+
+        // Lặp qua dãy Fibonacci cho đến khi tìm thấy số chia hết cho 5
+        while (b % 5 !== 0) {
+            // Cập nhật hai số hạng tiếp theo của dãy Fibonacci
+            let c = a + b;
+            a = b;
+            b = c;
+        }
+
+        // Trả về số hạng tìm thấy
+        alert(b + ' chia hết cho 5');
+    </script>
+</body>
+</html>

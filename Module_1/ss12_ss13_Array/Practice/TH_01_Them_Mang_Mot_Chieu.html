@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Sample Screen</h1>
+    <input type="text" id="txtValue" name="" value=""/>
+    <button id="add" onclick="add_element_to_array();">Add</button>
+    <button id="display" onclick="display_array();">Display</button>
+    <div id="result"></div>
+
+<script>
+    //x là chỉ số truy cập tới các phần tử trong mảng
+    let x=0;
+    //tạo mảng array lưu các giá trị đc nhập vào
+    let array = Array();
+    //xây dựng hàm add_element_to_array() để thêm 1 phần tử
+    function add_element_to_array() {
+        array[x] = document.getElementById("txtValue").value;
+        alert("Element: " + array[x] + "Added at index " + x);
+        x++;
+        document.getElementById("txtValue").value = "";
+    }
+    function display_array() {
+        let e = "<hr/>";
+        //length là một thuộc tính thêm vào và trả về 1 phần tử trong mảng
+        for (let i = 0; i < array.length; i++){
+            e += "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</body>
+</html>

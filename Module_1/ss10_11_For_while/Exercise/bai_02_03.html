@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Nhập số cạnh'));
+    let n1 = parseInt(prompt('Nhập số cạnh'));
+
+
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= i; j++) {
+            document.writeln("*");
+        }
+        document.writeln("<br>");
+    }
+    document.write("<br>");
+    for (let i1 = n1; i1 >= 1; i1--) {
+        for (let j1 = 1; j1 <= i1; j1++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<br>");
+
+
+     let result = "<table>";
+     for (let i2 = 5; i2 >= 1; i2--) {
+         //tạo hàng
+         result += "<tr>";
+         for (let j2 = 1; j2 <= 5; j2++) {
+             result += "<td>";
+             if (j2 >= i2) {
+                 result += "*";
+             }
+             result += "</td>";
+         }
+         result += "</tr>";
+     }
+     result += "</table>";
+     document.write(result);
+
+</script>
+</body>
+</html>

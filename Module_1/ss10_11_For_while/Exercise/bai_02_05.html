@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let initialMoney = +prompt('Nhập số tiền vay ');
+    let numberOfMonths = +prompt('Nhập số tháng vay ');
+    let monthlyInterestRate = +prompt('Nhập lãi xuất hàng tháng');
+    let interest = 0;
+    for (let i = 0; i < numberOfMonths; i++){
+        interest += initialMoney*monthlyInterestRate;
+    }
+    document.write('Tổng tiền gốc và lãi là: '+interest);
+</script>
+</body>
+</html>

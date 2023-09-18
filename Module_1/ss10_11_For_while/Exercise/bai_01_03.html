@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị ra 20 số trong dãy fibonacci đầu tiên</title>
+</head>
+<body>
+    <script>
+        // 2 giá trị cho fibonacci
+        let a = 0;
+        let b = 1;
+        for (let i = 0; i < 20; i++){
+            //công thức tính
+            let c = a + b;
+            //in ra kết quả
+            document.write(`${c} <br>`);
+            //lặp lại
+            a = b;
+            b = c;
+        }
+    </script>
+</body>
+</html>

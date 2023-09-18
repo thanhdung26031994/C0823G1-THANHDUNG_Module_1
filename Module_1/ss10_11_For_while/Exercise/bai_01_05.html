@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // Khởi tạo hai số hạng đầu tiên của dãy Fibonacci
+        let a = 0;
+        let b = 1;
+
+        // Tạo một biến để lưu trữ tổng
+        let sum = 0;
+
+        // Lặp qua 20 số đầu tiên của dãy Fibonacci
+        for (let i = 0; i < 20; i++) {
+            // Cập nhật tổng
+            sum += b;
+
+            // Cập nhật hai số hạng tiếp theo của dãy Fibonacci
+            let c = a + b;
+            a = b;
+            b = c;
+        }
+
+        // Trả về tổng
+        alert("Tổng của 20 số đầu tiên trong Fibonacci là: "+sum);
+    </script>
+</body>
+</html>
