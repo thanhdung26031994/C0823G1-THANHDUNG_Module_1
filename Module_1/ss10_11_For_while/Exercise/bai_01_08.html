@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        <input type="button" onclick="game()" value="Bắt Đầu"/>
+    </p>
+<script>
+    function game() {
+        for (;;) {
+            // Hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
+            let min = prompt("Bạn muốn đoán trong khoảng nào (min)?");
+            let max = prompt("Bạn muốn đoán trong khoảng nào (max)?");
+
+            // Chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn
+            let number = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            // Hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán
+            let guess = prompt("Hãy đoán số:");
+
+            // Lấy kết quả và so sánh với giá trị ngẫu nhiên
+            if (guess === number) {
+                // Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi
+                alert("Chúc mừng! Bạn đã đoán đúng!");
+                break;
+            } else {
+                // Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại
+                alert(guess > number ? "Bạn đoán quá thấp!" : "Bạn đoán quá cao!");
+            }
+        }
+    }
+</script>
+</body>
+</html>
