@@ -11,41 +11,33 @@
 <script>
     function choi() {
         // Hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
-        let min = prompt("Bạn muốn đoán trong khoảng nào (min)?");
-        let max = prompt("Bạn muốn đoán trong khoảng nào (max)?");
+        let min = +prompt("Bạn muốn đoán trong khoảng thấp nhất là:");
+        let max = +prompt("Bạn muốn đoán trong khoảng cao nhất là:");
 
         // Chọn ra số ngẫu nhiên trong khoảng mà người dùng chọn
-        let soNgauNhien = Math.floor(Math.random() * (max - min + 1)) + min;
-
+        let ramdom = Math.round(Math.random() * (max - min) + min);
+        // Hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán
+        let soDoan = +prompt("Mời bạn đoán số:");
         // Tạo biến đếm số lần đoán
-        let soLanDoan = 1;
+        let count = 1;
 
         // Vòng lặp for while để người dùng có thể đoán lại nhiều lần
-        while (soLanDoan <= 3) {
-            // Hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán
-            let soDoan = prompt("Mời bạn đoán số:");
-
-            // Lấy kết quả và so sánh với giá trị ngẫu nhiên
-            let ketQua = Number(soDoan);
-            if (ketQua === soNgauNhien) {
+        do {
+            if (soDoan === ramdom) {
                 // Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi
                 alert("Chúc mừng bạn đã đoán đúng!");
                 break;
             } else {
                 // Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại
-                if (ketQua > soNgauNhien) {
-                    alert("Số bạn đoán lớn hơn số ngẫu nhiên!");
+                if (soDoan > ramdom) {
+                    soDoan = alert("Số bạn đoán lớn hơn số ngẫu nhiên!");
+                    count++
                 } else {
-                    alert("Số bạn đoán bé hơn số ngẫu nhiên!");
+                    soDoan = alert("Số bạn đoán bé hơn số ngẫu nhiên!");
+                    count++
                 }
             }
-            soLanDoan++;
-        }
-
-        // Nếu người dùng đoán sai hết 3 lần thì hiển thị thông báo thua
-        if (soLanDoan > 3) {
-            alert("Bạn đã thua!");
-        }
+        }while (count < 3)
     }
 </script>
 </body>
