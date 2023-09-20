@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let isArray = [];
+        for (let i = 0; i < 10; i++) {
+            let inport = inputNumber(isArray, i);
+            isArray.push(inport);
+        }
+        function inputNumber(isArray, i) {
+            let n;
+            while (true){
+                n = +
+                    prompt(`Nhập phần tử thứ ${i} :`);
+                const check = checkExists(isArray, n)
+                if (check){
+                    alert('Vui lòng nhập lại.');
+                }else {
+                    return n;
+                }
+            }
+        }
+        function checkExists(isArray, n) {
+            for (let j = 0; j < isArray.length; j++){
+                if (n === isArray[j]){
+                    return true;
+                }
+            }
+            return false;
+        }
+        console.log(isArray);
+
+        // Đảo ngược các phần tử trong mảng numbers
+        for (let i = 0; i < isArray.length / 2; i++) {
+            const temp = isArray[i];
+            isArray[i] = isArray[isArray.length - 1 - i];
+            isArray[isArray.length - 1 - i] = temp;
+        }
+        //đaảo ngược
+        /*for (let i = isArray.length - 1; i >= 0; i--){
+            //lưu giá trị phần tử hiện tại
+            let temp = isArray[i];
+            //gán giá trị hiện tại cho phần tử trước
+            isArray[i] = isArray[i - 1];
+            //gán giá trị đã lưu cho phần tử trước đó
+            isArray[i - 1] = temp;
+        }*/
+        console.log(isArray);
+
+    </script>
+</body>
+</html>

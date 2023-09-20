@@ -6,7 +6,7 @@
 </head>
 <body>
     <script>
-        let temperature = Number(prompt('Nhập nhiệt độ hiện tại'));
+        /*let temperature = Number(prompt('Nhập nhiệt độ hiện tại'));
             if (temperature > 100){
                 document.write('Nhiệt độ quá cao. Vui lòng giảm nhiệt độ.');
             }else if (temperature < 20){
@@ -14,8 +14,18 @@
             }
             else {
                 document.write(`Nhiệt độ hiện tại ${temperature} là nhiệt độ thích hợp`);
+            }*/
+        let temp;
+        do {
+            temp = +prompt("Nhập nhiệt độ:");
+            if (temp < 20){
+                alert("Nhiệt độ quá thấp");
+            }else if(temp > 100){
+                alert("Nhiệt độ quá cao");
+            }else {
+                alert(`Nhiệt độ phù hợp là ${temp}`);
             }
-
+        }while (temp < 20 || temp > 100);
     </script>
 </body>
 </html>

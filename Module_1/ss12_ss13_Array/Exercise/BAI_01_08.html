@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+        let nhap = inputNumber(numbers, i);
+        numbers.push(nhap);
+    }
+    function inputNumber(numbers, i) {
+        let n;
+        while (true){
+            n = +prompt(`Nhập phần tử thứ ${i}: `);
+            const check = checkExists(numbers, n);
+            if (check){
+                alert('Vui lòng nhập lại.');
+            }else {
+                return n;
+            }
+        }
+    }
+    function checkExists(numbers, n) {
+        for (let j = 0; j < numbers.length; j++) {
+            if (n === numbers[j]){
+                return true
+            }
+        }
+        return false;
+    }
+    for (let i = 0; i < numbers.length -1; i++) {
+        for (let j = i + 1; j < numbers.length; j++) {
+            if (numbers[i] < numbers[j]){
+                let temp = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = temp;
+            }
+        }
+
+    }
+    console.log('Phần tử giảm dần: ' + numbers);
+</script>
+</body>
+</html>

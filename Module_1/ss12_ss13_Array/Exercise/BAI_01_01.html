@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //khởi tạo mảng rổng
+    let isArray = [];
+    //nhap phan tu cho mang
+    for (let i = 0; i < 10; i++){
+        isArray.push(+prompt("Nhap phan tu" + (i+1) + ": "));
+    }
+    //hiện ra dãy mảng mới nhập
+    console.log(isArray);
+    //
+    let count = 0;
+    // tính số phần tử lớn hơn hoặc bằng 10
+    for (let i= 0; i < isArray.length; i++){
+        if (isArray[i] >= 10){
+            count++
+        }
+    }
+    //hiện ra số phần tử lớn hơn hoặc bằng 10
+    console.log('Có ' + count + ' là phần tử có giá trị lớn hơn hoặc bằng 10');
+
+</script>
+</body>
+</html>

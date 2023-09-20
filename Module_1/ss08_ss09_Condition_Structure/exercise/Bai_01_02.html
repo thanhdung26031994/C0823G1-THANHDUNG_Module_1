@@ -7,11 +7,19 @@
 <body>
     <script>
         let yearOld = parseInt(prompt('Nhập tuổi vào lớp 10:'));
-        if (yearOld >=16){
-            document.write('Bạn đủ điều kiện vào lớp 10.<br>Chúc mừng bạn. ')
+        let count = 16;
+       /* if (yearOld >=16){
+            document.write('Bạn đủ điều kiện vào lớp 10.<br>Chúc mừng bạn. ');
         }else if (yearOld >=12){
-            document.write('Bạn nên học cấp 2')
+            document.write('Bạn nên học cấp 2. <br> Vui lòng nhập lại.');
+        }*/
+        if (yearOld < count){
+            document.writeln("Tuổi học sinh không đủ điều kiện vào lớp 10.");
+            yearOld = parseInt(prompt('Nhập tuổi vào lớp 10 lại:'));
+        }else {
+            document.writeln("Tuổi học sinh đủ điều kiện vào lớp 10.");
         }
+
     </script>
 </body>
 </html>

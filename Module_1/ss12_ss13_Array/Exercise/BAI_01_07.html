@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let isArray = [];
+        for (let i = 0; i < 10; i++){
+            isArray.push(Math.floor(Math.random()*20));
+        }
+        console.log(isArray);
+        let v = +prompt("Nhập giá trị V: ");
+        let valueV = false;
+        for (let i = 0; i < isArray.length; i++){
+            if (isArray[i] === v){
+                valueV = true;
+                break;
+            }
+        }
+        if (valueV){
+            isArray.splice(isArray.indexOf(v), 1);
+        }
+        console.log(isArray);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let isArray = [];
+    for (let i = 0; i < 10; i++){
+        //ramdom mảng
+        isArray.push(Math.floor(Math.random() * 100));
+    }
+    console.log(isArray);
+    let v = +prompt('Nhập giá trị cho V: ');
+    console.log(v);
+    //kiểm tra V có trong mảng không ???
+    let isInArray = false;
+    for (let i = 0; i < isArray.length; i++) {
+        if (isArray[i] === v){
+            isInArray = true;
+            break;
+        }
+    }
+    if (isInArray){
+        console.log('V is in the array');
+    }else {
+        console.log('V is not in the array');
+    }
+</script>
+</body>
+</html>

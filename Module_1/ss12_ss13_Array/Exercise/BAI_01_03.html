@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let numbers = [];
+        for (let i = 0; i < 10; i++) {
+            let nhap = inputNumber(numbers, i);
+            numbers.push(nhap);
+        }
+        function inputNumber(numbers, i) {
+            let n;
+            while (true){
+                n = +prompt(`Nhập phần tử thứ ${i}: `);
+                const check = checkExists(numbers, n);
+                if (check){
+                    alert('Vui lòng nhập lại.');
+                }else {
+                    return n;
+                }
+            }
+        }
+        function checkExists(numbers, n) {
+            for (let j = 0; j < numbers.length; j++) {
+                if (n === numbers[j]){
+                    return true
+                }
+            }
+            return false;
+        }
+        console.log(numbers);
+        //tính tổng
+        let total = 0;
+        //vị trí giá trị lớn nhất
+        let maxIndex = numbers[0];
+        for (let i = 0; i < numbers.length; i++) {
+            if (maxIndex < numbers[i]){
+                maxIndex = numbers[i];
+            }
+            total += Number(numbers[i]);
+            maxIndex += Number(numbers[i]/2);
+        }
+        console.log(total);
+        console.log(maxIndex);
+    </script>
+</body>
+</html>

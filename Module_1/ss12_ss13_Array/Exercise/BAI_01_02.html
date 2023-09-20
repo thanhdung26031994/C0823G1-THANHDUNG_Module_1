@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    for (let i = 0; i < 10; i++){
+        let nhap = inputNumber(numbers, i)
+        numbers.push(nhap);
+    }
+    function inputNumber(numbers, i) {
+        let n;
+        while (true) {
+            n = +prompt(`Nhap phan tu thu ${i}: `)
+            const check = checkExists(numbers, n);
+            if (check) {
+                alert("Nhap lai")
+            } else {
+                return n;
+            }
+        }
+    }
+
+    // kiem tra trung lap
+    function checkExists(numbers, n) {
+        for (let j = 0; j < numbers.length; j++) {
+            if (n === numbers[j]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    console.log(numbers);
+    //khai báo giá trị lớn nhất
+    let maxNumber = numbers[0];
+    //khai báo vị trí của giá trị lớn nhất
+    let maxIndex = 0;
+    //tinh tong cua mang
+    let tong = 0;
+    //tinh trung binh của mang
+    let mediumNumber = 0;
+    //chạy kiểm tra
+    for (let i =0; i < numbers.length; i++){
+        if (numbers[i] > maxNumber){
+            maxNumber = numbers[i];
+            maxIndex = i;
+        }
+        tong += Number(numbers[i]);
+        mediumNumber += Number(numbers[i]/2);
+    }
+    console.log("Giá trị lớn nhất là: " + maxNumber);
+    console.log("Vị trí của giá trị lớn nhất là: "+ maxIndex);
+    console.log(tong);
+    console.log(mediumNumber);
+</script>
+</body>
+</html>

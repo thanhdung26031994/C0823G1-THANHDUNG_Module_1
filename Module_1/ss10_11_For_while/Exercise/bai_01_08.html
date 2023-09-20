@@ -23,21 +23,20 @@
 
         // Vòng lặp for while để người dùng có thể đoán lại nhiều lần
         do {
-            if (soDoan === ramdom) {
+            // Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại
+            if (soDoan > ramdom) {
+                soDoan = +prompt("Số bạn đoán lớn hơn số ngẫu nhiên!. Nhập lại");
+                count++
+            } else if(soDoan < ramdom){
+                soDoan = +prompt("Số bạn đoán bé hơn số ngẫu nhiên!. Nhập lại");
+                count++
+            }else {
                 // Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi
                 alert("Chúc mừng bạn đã đoán đúng!");
                 break;
-            } else {
-                // Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại
-                if (soDoan > ramdom) {
-                    soDoan = alert("Số bạn đoán lớn hơn số ngẫu nhiên!");
-                    count++
-                } else {
-                    soDoan = alert("Số bạn đoán bé hơn số ngẫu nhiên!");
-                    count++
-                }
             }
         }while (count < 3)
+
     }
 </script>
 </body>

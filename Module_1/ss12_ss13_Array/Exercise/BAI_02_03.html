@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = ["e", "w", "c", "6", "t", "1", "o"];
+    let count = 0;
+    //lặp qua mảng
+    for (let i = 0; i < a.length; i++) {
+        //kiểm tra xem phần tử hiện tại có phải là ký tự số không
+        if (a[i].match(/[0-9]/)){
+            //nếu có tăng biến đếm là 1
+            count++
+        }
+    }
+    console.log("Số ký tự số trong mảng là: " + count);
+</script>
+</body>
+</html>
