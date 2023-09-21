@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let inputRow = +prompt("Nhập số hàng: ");
+        let inputCol = +prompt("Nhập số cột: ");
+        let maxArr = 0;
+        //khởi tạo hàng
+        let arr2d = new Array(inputRow);
+        for (let row = 0; row < arr2d.length; row++) {
+            //khởi tạo cột
+            arr2d[row] = new Array(inputCol);
+            for (let col = 0; col < arr2d[row].length; col++) {
+                //nhập dữ liệu cho hàng và cột
+                arr2d[row][col] = +prompt("Input value at ["+row+"]["+col+"]: ");
+            }
+        }
+        for (let row = 0; row < arr2d.length; row++) {
+            for (let col = 0; col < arr2d[row].length; col++) {
+                document.write(arr2d[row][col] + " ");
+                if (arr2d[row][col] > maxArr){
+                    arr2d[row][col] = maxArr;
+                    maxArr++;
+                }
+            }
+            document.write("<br>");
+        }
+        document.write("Giá trị lớn nhất trong mảng là: "+maxArr);
+
+
+    </script>
+</body>
+</html>

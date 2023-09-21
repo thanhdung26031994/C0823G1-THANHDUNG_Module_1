@@ -10,8 +10,17 @@
         function countDung(name) {
             let count = 0;
             for (let i = 0; i < name.length; i++) {
-                if (name[i] === "h" || name[i] === "u" || name[i] === "y" || name[i] === "n" || name[i] === "t" || name[i] === "r" || name[i] === "d" || name[i] === "g" ) {
+                /*if (name[i] === "h" || name[i] === "u" || name[i] === "y" || name[i] === "n" || name[i] === "t" || name[i] === "r" || name[i] === "d" || name[i] === "g" ) {
                     count++;
+                }*/
+                switch (name[i]) {
+                    case 'u':
+                    case 'e':
+                    case 'o':
+                    case 'a':
+                    case 'i':
+                        count++
+                        break
                 }
             }
             return count;

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //tao cot va hang
+        let matrix = new Array(5).fill(new Array(5));
+        let total = 0;
+        for (let row = 0; row < matrix.length; row++){
+            for (let column = 0; column < matrix[row].length; column++) {
+                //ramdom
+                matrix[row][column] = Math.floor((Math.random()*100) + 1);
+                //hien thi cac phan tu cua mang
+                document.writeln(matrix[row][column] + " ");
+                //tong cac phan tu
+                total += matrix[row][column];
+            }
+            document.writeln("<br>");
+        }
+        document.writeln("Tong gia tri cua mang 2 chieu la: "+total);
+        document.writeln("<br>");
+        //Tinh tong cac phan tu theo tung cot
+        for (let column = 0; column < matrix[0].length; column++){
+            let total = 0;
+            for (let row = 0; row < matrix.length; row++) {
+                total += matrix[row][column];
+                document.writeln("Sum for column " + column + " is " + total + "<br>");
+            }
+            document.writeln("<br>");
+        }
+        document.writeln("<br>");
+        //tim hang co tong lon nhat
+        let maxRow = 0;
+        let indexOfMaxRow = 0;
+        for (let column = 0; column < matrix[0].length; column++) {
+            maxRow += matrix[0][column];
+        }
+        for (let row = 0; row < matrix.length; row++) {
+            let totalOfThisRow = 0;
+            for (let column = 0; column < matrix[row].length; column++) {
+                totalOfThisRow +=matrix[row][column];
+                if (totalOfThisRow > maxRow){
+                    maxRow = totalOfThisRow;
+                    indexOfMaxRow = row;
+                }
+            }
+        }
+        document.writeln("Row " + indexOfMaxRow + " has the maximum sum of " + maxRow);
+        //tron ngau nhien cac phan tu
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                let i1 = (Math.random()*matrix.length);
+                let j1 = (Math.random()*matrix[i].length);
+                let temp = matrix[i][j];
+                matrix[i][j] = matrix[i1][j1];
+                matrix[i1][j1] = temp;
+            }
+            console.log(temp);
+        }
+
+    </script>
+</body>
+</html>
