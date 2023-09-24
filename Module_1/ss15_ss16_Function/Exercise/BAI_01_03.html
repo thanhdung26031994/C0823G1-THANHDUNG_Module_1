@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let a = +prompt('Nhập số a: ');
+        let b = +prompt('Nhập số b: ');
+        function notification(){
+            if (a > b){
+                document.write('a lớn hơn b.');
+            }else if(a <= b){
+                let sum = a + b;
+                document.write("Tổng a, b là: " + sum);
+            }
+        }
+        notification(a,b);
+    </script>
+</body>
+</html>

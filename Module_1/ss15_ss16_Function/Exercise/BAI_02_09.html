@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr.push(prompt("Nhập ky tự cho mảng " + (i+1) + ": "))
+        }
+        let char = +prompt("Ký tự bạn muốn tìm: ");
+        function searchArray() {
+            if (arr.length === 0){
+                return -1;
+            }
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === char){
+                    count++;
+                }
+            }
+            return count;
+        }
+        let outputA = searchArray(arr, char);
+        console.log(outputA);
+    </script>
+</body>
+</html>

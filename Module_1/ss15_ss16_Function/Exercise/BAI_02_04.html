@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không</title>
+</head>
+<body>
+    <script>
+        let inputNotNumber = +prompt("Nhập ký tự muốn kiểm tra: ");
+
+        //Kiem tra hàm trả về true or false
+        //isNaN (Not a Number) trả về true nếu giá trị không phải là 1 số
+        //và false nếu giá trị là một số
+        // dấu chấm than (!) để đảo ngược giá trị trả về
+        function checkNumber() {
+            return !isNaN(inputNotNumber);
+        }
+        console.log(checkNumber(inputNotNumber));
+    </script>
+</body>
+</html>

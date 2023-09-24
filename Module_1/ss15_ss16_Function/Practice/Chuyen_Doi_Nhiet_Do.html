@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng hàm để chuyển đổi từ độ F cho trước sang độ C theo công thức sau: C = (F - 32)/1.8</title>
+</head>
+<body>
+    <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="text" placeholder="Fahrenheit"
+        oninput="tempConver(this.value)"
+        onchange="tempConver(this.value)"/>
+    </p>
+    <p>Celsius: <span id="outputCelsius"></span></p>
+
+    <script>
+        function tempConver(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //khởi tạo mảng rổng
+    let isArray = [];
+    //nhap phan tu cho mang
+    for (let i = 0; i < 10; i++){
+        isArray.push(+prompt("Nhap phan tu" + (i+1) + ": "));
+    }
+    //hiện ra dãy mảng mới nhập
+    console.log(isArray);
+    function swap() {
+        //cách 1:
+        for (let i = 0; i < isArray.length/2; i++) {
+            let temp = isArray[i];
+            isArray[i] = isArray[isArray.length - 1 -i];
+            isArray[isArray.length - 1 - i] = temp;
+        }
+        //cách 2:
+        //return isArray.reverse();
+    }
+    swap(isArray);
+</script>
+</body>
+</html>

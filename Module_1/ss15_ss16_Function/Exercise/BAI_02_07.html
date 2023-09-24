@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*function transposition() {
+            let arr = [];
+            for (let i = 0; i < 2; i++) {
+                arr.push(prompt("Nhập số: "));
+            }
+            for (let i = 0; i < arr.length/2; i--){
+                let temp = arr[i];
+                arr[i] = arr[arr.length - 1 -i];
+                arr[arr.length - 1 -i] = temp;
+            }
+            return temp;
+        }*/
+        let a = +prompt("Nhập a: ");
+        let b = +prompt("Nhập b: ");
+        function swap() {
+            let temp = a;
+            a = b;
+            b = temp;
+            return [a, b];
+        }
+
+        console.log(swap(a, b));
+    </script>
+</body>
+</html>

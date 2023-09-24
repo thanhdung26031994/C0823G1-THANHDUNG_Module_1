@@ -6,31 +6,60 @@
 </head>
 <body>
     <script>
-        let inputRow = +prompt("Nhập số hàng: ");
-        let inputCol = +prompt("Nhập số cột: ");
-        let maxArr = 0;
-        //khởi tạo hàng
-        let arr2d = new Array(inputRow);
-        for (let row = 0; row < arr2d.length; row++) {
-            //khởi tạo cột
-            arr2d[row] = new Array(inputCol);
-            for (let col = 0; col < arr2d[row].length; col++) {
-                //nhập dữ liệu cho hàng và cột
-                arr2d[row][col] = +prompt("Input value at ["+row+"]["+col+"]: ");
-            }
-        }
-        for (let row = 0; row < arr2d.length; row++) {
-            for (let col = 0; col < arr2d[row].length; col++) {
-                document.write(arr2d[row][col] + " ");
-                if (arr2d[row][col] > maxArr){
-                    arr2d[row][col] = maxArr;
-                    maxArr++;
+        /*function findMaxMin(){
+            let min = arr[0][0];
+            let max = arr[0][0];
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    if (arr[i][j] < min){
+                        min = arr[i][j];
+                    }else if (arr[i][j] > max){
+                        max = arr[i][j];
+                    }
                 }
             }
-            document.write("<br>");
+            return {min, max};
         }
-        document.write("Giá trị lớn nhất trong mảng là: "+maxArr);
+        let inputRow = +prompt("Nhập số hàng: ");
+        let inputCol = +prompt("Nhập số cột: ");
+        let arr = new Array(inputRow);
+        for (let row = 0; row < arr.length; row++) {
+            arr[row] = new Array(inputCol);
+            for (let col = 0; col < arr[row].length; col++) {
+                arr[row][col] = +prompt("Nhập phần tử vào mảng ["+row+"]["+col+"]: ");
+            }
+        }
+        for (let row = 0; row < arr.length; row++) {
+            for (let col = 0; col < arr[row].length; col++) {
+                document.writeln(arr[row][col] + " ");
+            }
+            document.writeln("<br>");
+        }
 
+        /!*let arr = [[1,2,3],[4,5,6],[7,8,9]];*!/
+        let result = findMaxMin(arr);
+        console.log(result);*/
+        function sortMatrixWithAuxiliaryArray(matrix) {
+            let auxiliaryArray = [];
+
+            for (let i = 0; i < matrix.length; i++) {
+                auxiliaryArray = auxiliaryArray.concat(matrix[i]);
+            }
+
+            auxiliaryArray.sort((a, b) => a - b);
+
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    matrix[i][j] = auxiliaryArray.shift();
+                }
+            }
+
+            return matrix;
+        }
+
+        let matrix = [[5, 4, 7], [1, 3, 8], [2, 9, 6]];
+        let sortedMatrix = sortMatrixWithAuxiliaryArray(matrix);
+        console.log(sortedMatrix);
 
     </script>
 </body>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào</title>
+</head>
+<body>
+    <script>
+        //tính giai thừa bằng phương pháp đệ quy n! = n*(n-1)
+        //trường hợp đặc biệt: 0!=1
+        let valueA = +prompt("Nhập số nguyên tính giai thừa: ");
+
+        function factorial() {
+            let fac = 1;
+            //kiểm tra 0 giai thừa  = 1
+            if (valueA === 0){
+                return 1;
+            }
+            //tính giai thừa của số nguyên
+            for (let i = 1; i <= valueA; i++){
+                fac *= i;
+            }
+            return fac;
+        }
+        document.write("Giai thừa của " + valueA + " là "+ factorial(valueA));
+    </script>
+</body>
+</html>
