@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    function isPalindrome(str) {
+        let i = 0;
+        let j = str.length - 1;
+        while (i<j){
+            if (str[i] !== str[j]){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    let str1 ="rotor";
+    let str2 ="apapdpapa"
+    let str3 ="a"
+    let str4 = "dsadsa"
+    console.log(isPalindrome(str1));
+    console.log(isPalindrome(str2));
+    console.log(isPalindrome(str3));
+    console.log(isPalindrome(str4));
+</script>
+</body>
+</html>

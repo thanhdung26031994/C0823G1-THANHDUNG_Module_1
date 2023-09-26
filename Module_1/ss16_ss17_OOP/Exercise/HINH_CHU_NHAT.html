@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <canvas id="canvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;" />
+
+<script>
+    class Rectangle{
+        constructor(width, length) {
+            this.length = length;
+            this.width = width;
+        }
+        getAcreage(){
+            return this.length*this.width;
+        }
+        getPerimeter(){
+            return (this.length*this.width)*2;
+        }
+        draw(canvas){
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = "rgb(0,255,0)";
+            ctx.fillRect(0, 0, this.width, this.length);
+        }
+    }
+    let canvas = document.querySelector("canvas");
+    let rectrangle = new Rectangle(100,50);
+    rectrangle.draw(canvas);
+    rectrangle.width = 200;
+    rectrangle.length = 100;
+    console.log("Diện tích: ", rectrangle.getAcreage());
+    console.log("Chu vi: ", rectrangle.getPerimeter());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Add New Product</h1>
+    <div>
+        <label>
+            <input type="text" id="products" placeholder="New Product" />
+        </label>
+        <button onclick="add()" style="background-color: lightgreen" name="them">Add</button>
+    </div>
+    <h2>Display All Product</h2>
+   <div id="myTable">
+
+   </div>
+    <script>
+    let productName = ["Sony Xpreria","Samsum Galaxy", "Nokia 6"];
+    
+    function displayName() {
+        let textHTML = "<table>\n" +
+            "        <tr>" +
+            "            <th>Product Name</th>\n" +
+            "        </tr>\n";
+        for (let i = 0; i < productName.length; i++) {
+            textHTML += "<tr>" +
+            "            <td>"+ productName[i] +"</td>" +
+            "            <td>"+"<button onclick='updateName("+i+")'>Edit</button>"+"</td>" +
+            "            <td>"+"<button onclick='deleteName("+i+")'>Delete</button>"+"</td>" +
+            "        </tr>";
+        }
+        textHTML += "</table>";
+        document.getElementById("myTable").innerHTML = textHTML;
+    }
+    function updateName(i) {
+        let newName = prompt("Đổi tên sản phẩm: " + productName[i]);
+        productName[i] = newName;
+        displayName();
+    }
+    function deleteName(i) {
+        if (confirm("Bạn có muốn xoá sản phẩm này ?.")){
+            productName.splice(i, 1);//splice xoá sản phẩm tại vị trí index và 1 đơn vị
+            displayName();
+        }
+    }
+    function add() {
+        let addproduct = document.getElementById("products").value;
+        if (addproduct){
+            productName.push(addproduct);//push thêm cuối mảng
+            displayName();
+        }
+    }
+    displayName();
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+    <script>
+        class Mobile{
+            constructor() {
+                this.battery = 80;
+                this.editor = "";
+                this.tinDaGui = [];
+                this.tinDaNhan = [];
+            }
+            //kiểm tra trạng thái điện thoại bật hay tắt
+            isOnOff(){
+                if (this.battery > 0){
+                    console.log("Điện thoại đang bật.");
+                }else {
+                    console.log("Điện thoại đang tăt.");
+                }
+            }
+            //chức năng bật và tắt điện thoại.
+            isOn(){
+                this.battery--;
+            }
+            isOff(){
+                this.battery =0;
+            }
+            //chức năng xạc pin điện thoại.
+            ischarge(){
+                if (this.battery < 100){
+                    this.battery += 10;
+                    return "Pin đang sạc.";
+                }
+                return "Pin đã đầy.";
+            }
+            //gửi tin nhắn
+            getTinDaGui(){
+                return this.tinDaGui;
+            }
+            //nhận tin nhắn từ một chiếc mobile khác
+            getTinDaNhan(){
+                return this.tinDaNhan;
+            }
+            //gửi tin nhắn tới một chiếc mobile khác.
+            guiTinNhan(moble, message){
+                this.tinDaGui.push(message);
+                moble.getTinDaNhan().push(message);
+            }
+        }
+        let samsung = new Mobile();
+        let iphone = new Mobile();
+        //kiểm tra đt đang bật hay tắt
+        samsung.isOnOff();
+        iphone.isOnOff();
+        //sạc pin
+        samsung.ischarge();
+        iphone.ischarge();
+        //gửi tin nhắn
+        console.log({iphone, samsung});
+        let mes =prompt("Tin muốn gửi");
+        iphone.guiTinNhan(samsung, mes);
+        console.log({iphone, samsung});
+
+
+
+    </script>
+</body>
+</html>

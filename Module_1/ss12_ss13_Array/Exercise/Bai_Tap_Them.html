@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="form">
+        <label>
+        <input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input
+            type="text"><br>
+        </label>
+        <button onclick="showkq()" >Show kết quả</button>
+    </div>
+    <div id="kq">
+
+    </div>
+</div>
+<script>
+    const mang = [];
+    function showkq() {
+        let inp=document.getElementsByTagName("input");
+        for (let i = 0; i < inp.length; i++) {
+            mang.push(inp[i].value);
+        }
+        let tongmang = sumArr();
+        let tongLe = oddSumArr();
+        let tongChan = evenSumArr();
+        let kq = `<h2>Mảng đã nhập:<span>`+mang+`</span></h2>
+        <h2>Tổng mảng:<span>`+tongmang+`</span></h2>
+        <h2>Tổng lẻ:<span>`+tongLe+`</span></h2>
+        <h2>Tổng chẳn:<span>`+tongChan+`</span></h2>
+        <h2>Sắp xếp tăng dần:<span></span></h2>`;
+        <h2>Sắp xếp giảm dần:<span></span></h2>;
+        document.getElementById("kq").innerHTML = kq;
+    }
+    function sumArr() {
+        let tong = 0;
+        for (let i = 0; i < mang.length; i++) {
+            tong += parseInt(mang[i]);
+        }
+        return tong;
+    }
+    function evenSumArr() {
+        let tong = 0;
+        for (let i = 0; i < mang.length; i++) {
+            if (parseInt(mang[i]) % 2 === 0){
+                tong += parseInt(mang[i]);
+            }
+        }
+        return tong;
+
+    }
+    function oddSumArr() {
+        let tong = 0;
+        for (let i = 0; i < mang.length; i++) {
+            if (parseInt(mang[i]) % 2 === 1){
+                tong += parseInt(mang[i]);
+            }
+        }
+        return tong;
+    }
+</script>
+</body>
+</html>
