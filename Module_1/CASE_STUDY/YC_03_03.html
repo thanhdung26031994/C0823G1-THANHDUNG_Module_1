@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function maxFraction(numerators, denominators) {
+        let result = [];
+        for (let i = 0; i < numerators.length; i++){
+            let ketQua = numerators[i]/denominators[i];
+            result.push(ketQua);
+        }
+        let maxIndex = result.indexOf(Math.max(...result));
+        return maxIndex;
+    }
+    let numerators = [5,2,5];
+    let denominators = [6, 3, 4];
+    let result = maxFraction(numerators, denominators);
+    console.log(result);
+</script>
+</body>
+</html>

@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    function prefixSums(a) {
+        //tạo mảng b
+        let b = [];
+        //
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            sum += a[i];
+            b.push(sum);
+        }
+        return b;
+    }
 
+    let a = [1,2,3,4,5,6,7,8,9];
+    let b = prefixSums(a);
+    console.log(b);
+</script>
 </body>
 </html>

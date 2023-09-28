@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function missingValue(a,b) {
+        //tạo mảng rổng lưu kết quả
+        let result =[];
+        //duyệt mảng b
+        for (let value of b){
+            if (!a.includes(value)){
+                result.push(value);
+            }
+        }
+        result.sort();
+        return result;
+    }
+    let a = [1, 2, 3, 4, 5];
+    let b = [7,6,5,4,3,2,1];
+    let result = missingValue(a, b);
+    console.log(result);
+</script>
+</body>
+</html>
