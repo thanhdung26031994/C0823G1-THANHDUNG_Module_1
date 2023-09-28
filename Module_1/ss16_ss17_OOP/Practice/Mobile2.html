@@ -105,8 +105,10 @@
     console.log({iphone, samsung});
     samsung.checkPowerStatus();
     console.log(samsung);
-    samsung.sendMessage("hello");
+    samsung.sendMessage(iphone, "hello");
     console.log(samsung);
+    samsung.viewInbox();
+
 
 </script>
 </body>

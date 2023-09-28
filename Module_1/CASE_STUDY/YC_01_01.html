@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+    let money = +prompt("Nhập lương muốn tính: ");
+    let n;
+    if (money >= 15000000){
+        n = money*0.2;
+        alert('Lương bạn này:'+ money +' trừ 20% TNCN:'+ n +' còn lại là: '+ (money - n)+' Đồng');
+    }else if (money >= 7000000){
+        n = money*0.1;
+        alert('Lương bạn này:'+ money +' trừ 10% TNCN:'+ n +' còn lại là: '+ (money - n)+' Đồng');
+    }else {
+        n = money*0.05;
+        alert('Lương bạn này:'+ money +' trừ 5% TNCN:'+ n +' còn lại là: '+ (money - n)+' Đồng')
+    }
+
+</script>
+</body>
+</html>
