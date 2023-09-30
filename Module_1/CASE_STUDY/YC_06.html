@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <label>
+        <button onclick="addStudent()">Thêm mới học viên</button>
+        <button onclick="changeStudent()">Sửa thông tin học viên</button>
+        <button onclick="deleteStudent()">Xoá học viên</button>
+    </label>
+</div>
+<br>
+<div id="root"></div>
+
+<script>
+    class Student {
+        constructor(maHV, ten, lop, email, ngaySinh, module) {
+            this.maHV = maHV;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+            this.module = module;
+        }
+
+        getMaHV() {
+            return this.maHV;
+        }
+
+        setMaHV(mahv) {
+            this.maHV = mahv;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        getLop() {
+            return this.lop;
+        }
+
+        setLop(lop) {
+            this.lop = lop;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getNgaySinh() {
+            return this.ngaySinh;
+        }
+
+        setNgaySinh(ngaysinh) {
+            this.ngaySinh = ngaysinh;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setModule(module) {
+            this.module = module;
+        }
+    }
+
+    let nguyenVanA = new Student(
+        'HV-0004',
+        'Nguyễn Văn D',
+        'C1022G1',
+        'nguyenvand@gmail.com',
+        '04/04/204',
+        'Module 1');
+    let nguyenVanB = new Student(
+        'HV-0005',
+        'Nguyễn Văn E',
+        'C1022G1',
+        'nguyenvane@gmail.com',
+        '05/05/204',
+        'Module 1');
+    let nguyenVanC = new Student(
+        'HV-0005',
+        'Nguyễn Văn C',
+        'C1022G1',
+        'nguyenvane@gmail.com',
+        '01/01/204',
+        'Module 1');
+
+    let students = [nguyenVanA, nguyenVanB, nguyenVanC]
+    function addStudent() {
+        let maHV = prompt('Nhập mã học viên: ');
+        let ten = prompt('Nhập tên học viên: ');
+        let lop = prompt('Nhập lớp học viên: ');
+        let email = prompt('Nhập email học viên: ');
+        let ngaySinh = prompt('Nhập ngày sinh học viên: ');
+        let module = prompt('Nhập chương trình học: ');
+        let studentOne = new Student(maHV, ten, lop, email, ngaySinh, module);
+        students.push(studentOne);
+        schools();
+    }
+    function deleteStudent(student) {
+        let a = prompt('Nhập mã học viên xoá: ');
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].getMaHV() === a){
+                students.splice(i,1);
+            }else if (students[i].getMaHV() !== a){
+                alert('Bạn đã nhập sai.');
+                break;
+            }
+        }
+        schools();
+    }
+    
+    function changeStudent() {
+        let aStudent = prompt('Nhập mã học viên muốn sửa');
+
+    }
+    function schools() {
+        let studentTable = `<table class="box" id="root">
+<thead>
+    <tr>
+        <th>Mã học viên</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày Sinh</th>
+        <th>Module</th>
+    </tr>
+</thead>
+<tbody>`
+        for (let i = 0; i < students.length; i++) {
+            let student = students[i];
+            studentTable += `<tr>
+         <td>${student.getMaHV()}</td>
+         <td>${student.getTen()}</td>
+         <td>${student.getLop()}</td>
+         <td>${student.getEmail()}</td>
+         <td>${student.getNgaySinh()}</td>
+         <td>${student.getModule()}</td>
+     </tr>`
+        }
+
+        studentTable += `</tbody>
+</table>`;
+        document.getElementById("root").innerHTML = studentTable;
+    }
+    schools();
+
+</script>
+</body>
+</html>

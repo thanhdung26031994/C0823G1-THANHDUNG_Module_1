@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            padding: 20px;
+            margin: 20px;
+            max-width: 500px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!--Iphone-->
+    <div class="box">
+        <h2>Iphone</h2>
+        <div>
+            <button>Bật điện thoại</button>
+            <button>Tắt điện thoại</button>
+            <button>Kiểm tra điện thoại</button>
+            <button>Sạc pin</button>
+            <h4>Pin: 100%</h4>
+        </div>
+        <input type="text" />
+        <button>Gửi tin nhắn</button>
+    </div>
+    <!--Nokia-->
+    <div class="box">
+        <h2>Nokia</h2>
+        <div>
+            <button>Bật điện thoại</button>
+            <button>Tắt điện thoại</button>
+            <button>Kiểm tra điện thoại</button>
+            <button>Sạc pin</button>
+            <h4>Pin: 100%</h4>
+        </div>
+        <input type="text" />
+        <button>Gửi tin nhắn</button>
+    </div>
+
+<script>
+    class DienThoai{
+        constructor(pin, tinDangSoanThao, hopThuDen, tinDaGui, trangThai, ten) {
+            this.pin = pin;
+            this.hopThuDen = hopThuDen;
+            this.tinDaGui = tinDaGui;
+            this.trangThai = trangThai;
+            this.ten = ten;
+        }
+        getPin(){
+            return this.pin;
+        }
+        getHopThuDen(){
+            return this.hopThuDen;
+        }
+        getTinDaGui(){
+            return this.tinDaGui;
+        }
+        getTrangThai(){
+            return this.trangThai;
+        }
+        getTen(){
+            return this.ten;
+        }
+        setTen(ten){
+            this.ten = ten;
+        }
+
+    }
+
+    let iphone = new DienThoai(100, "", [], [], false, "Iphone");
+    let nokia = new DienThoai(100, "", [], [], true, "Nokia");
+</script>
+</body>
+</html>

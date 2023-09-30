@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function differentSymbolsNaive(s) {
+            //split là chia chuỗi thành nhiều chuỗi con
+            let arr = s.split('');
+            //Set là 1 loại đối tượng (object) lưu trữ duy nhất và k trùng lặp
+            let uniqueLetters = new Set(arr);
+            //dấu ...không giới hạn tham số truyền vào
+            let uniqueLetterArr = [...uniqueLetters];
+            //trả về độ dài
+            return uniqueLetterArr.length;
+        }
+        let s = 'qưertyuiop';
+        console.log(differentSymbolsNaive(s));
+    </script>
+</body>
+</html>

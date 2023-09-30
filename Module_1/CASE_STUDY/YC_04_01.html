@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    function normalizeString(str) {
+      //split để chuyển xâu ký tự thành mảng các từ
+      let words = str.split(" ");
+      //toUpperCase() là phương thức đổi chuỗi ký từ về chữ hoa
+      //toLowerCase() là phương thức đổi chuỗi ký từ về chữ hoa
+      //slice() không làm thay đổi chuỗi gốc
+      //map() tạo 1 mảng mới từ việc gọi hàm cho mọi phần tử trong mảng
+      words = words.map(word => word[0].toUpperCase() + word.slice(1).toLowerCase());
+      return words.join(" ");
+    }
+    function findLongestWord(str) {
+        let words = str.split(" ");
+        let longestWord = "";
+        for (let i =0; i < words.length; i++){
+            if (words[i].length > longestWord.length){
+                longestWord = words[i];
+            }
+        }
+        return longestWord;
+    }
+    let str = prompt("Nhập chuổi muốn chuyển đổi: ");
+    document.writeln('Chuổi mới nhập là: ' + str + '<br>');
+    document.writeln("Chuổi mới chuyển đổi lại: "+normalizeString(str)+'<br>');
+    document.writeln("Ký tự dài nhất trong chuỗi là: "+findLongestWord(str));
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    function commonCharacterCount(s1, s2) {
+      let count = 0;
+      let str = '';
+      for (let i = 0; i < s1.length; i++){
+          //indexOf kiểm tra chuỗi hoặc mảng và trả về phần tử đầu tiên nếu tìm thấy
+          // -1  là không tìm thấy giá trị
+          if (s2.indexOf(s1[i]) > -1 && str.indexOf(s1[i]) == -1){
+              count++
+              str.concat(s1[i]);//concat nối chuỗi
+          }
+      }
+      return count;
+    }
+    let s1 = 'qưert';
+    let s2 = 'qưertyuio';
+    console.log(commonCharacterCount(s1,s2));
+  </script>
+</body>
+</html>

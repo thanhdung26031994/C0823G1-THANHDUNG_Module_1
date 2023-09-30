@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let menu;
+        let n;
+        let result = 0;
+        do {
+            menu = +prompt('Nhập loại nước bạn muốn uống:\n ' +
+                '1.Cafe \n' +
+                '2.Cam Vắt \n' +
+                '3.Nước ép cà rốt \n' +
+                '4.Nước ép cà chua \n' +
+                '5.Nước lọc \n' +
+                '6.Nước dừa \n' +
+                '7.Tôi chưa muốn uống nước. \n');
+            switch (menu){
+                case 1:
+                    n = +prompt('Có giá 20.000Đ bạn vui lòng nhập số ly bạn muốn uống.');
+                    result += n*20.000;
+                    break;
+                case 2:
+                    n = +prompt('Có giá 25.000Đ bạn vui lòng nhập số ly bạn muốn uống.');
+                    result += n*25.000;
+                    break;
+                case 3:
+                    n = +prompt('Có giá 30.000Đ bạn vui lòng nhập số ly bạn muốn uống.');
+                    result += n*30.000;
+                    break;
+                case 4:
+                    n = +prompt('Có giá 30.000Đ bạn vui lòng nhập số ly bạn muốn uống.');
+                    result += n*30.000;
+                    break;
+                case 5:
+                    n = +prompt('Có giá 15.000Đ bạn vui lòng nhập số ly bạn muốn uống.');
+                    result += n*15.000;
+                    break;
+                case 6:
+                    n = +prompt('Có giá 25.000Đ bạn vui lòng nhập số ly bạn muốn uống.');
+                    result += n*25000;
+                case 7:
+                    alert('Cảm ơn bạn.')
+                    break;
+                default:
+                    alert('Nhập sai');
+            }
+            document.writeln(`Số tiền bạn cần trả là ${result} VND`);
+        }while(menu !== 7)
+
+    </script>
+</body>
+</html>
