@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let arr = [];
+    let n = prompt('Nhập số lượng phần tử trong mảng: ')
+    for (let i = 0; i < n; i++){
+        arr[i] = parseInt(prompt(`Nhập phần tử trong mảng tại ${i}: `));
+    }
+
+    function checkEqualFrequency(arr) {
+        let tanXuat = [];
+        for (let i = 0; i < arr.length; i++){
+            let count = 0;
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] === arr[j]) {
+                    count++;
+                    arr.splice(j, 1)
+                    j--
+                }
+            }
+            tanXuat.push({
+                key: arr[i],
+                count: count
+            });
+        }
+        /*let kiemTra = true;
+        for (let key in tanXuat) {
+            if (tanXuat[key] !== tanXuat){
+                kiemTra = false;
+                break;
+            }
+        }
+        return kiemTra;*/
+        if (tanXuat.length == 1){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+    console.log(arr);
+    console.log(checkEqualFrequency(arr));
+</script>
 </body>
 </html>

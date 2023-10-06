@@ -6,16 +6,21 @@
 </head>
 <body>
 <script>
+    //bai 1
     /*for (let i = 0; i < 6; i++) {
         for (let j = 0; j < 5; j++) {
             document.writeln('*');
         }
         document.writeln('<br>');
     }*/
+
+    //bai 2
     /*let year = parseInt(prompt('Nhập năm: '));
     let month = parseInt(prompt('Nhập tháng: '));
     document.writeln(`in ra Tháng ${month} năm ${year}`);*/
 
+
+    //bai3
     /*let n = parseInt(prompt('Nhập n số:'));
     function calculateSum(n){
         let s = 0;
@@ -26,8 +31,9 @@
     }
     document.writeln('Dãy số S là: '+ calculateSum(n));
     console.log(calculateSum(n));*/
-    debugger
-    function tinhTongS(n) {
+
+    //bai 4
+    /*function tinhTongS(n) {
         let S = 15;
         let giaiThua = 1;
         for (let j = 1; j <= n; j++) {
@@ -39,12 +45,196 @@
 
     let n = parseInt(prompt("Nhập giá trị n: "));
     let tongS = tinhTongS(n);
-    console.log("Tổng S =", tongS);
+    console.log("Tổng S =", tongS);*/
 
-   /* function tinh(){
-        let s=0;
-        for (let i = 1; i <= )
-    }*/
+    //bai 5
+    /*function tinhTongS(n){
+        let s = 1;
+
+        for (let i = 2; i < n; i= i+2) {
+            s += (1/(2*i-1));
+        }
+        return s;
+    }
+    let n = parseInt(prompt('Nhap giá trị n: '));
+    console.log(tinhTongS(n));*/
+
+    //bai6
+    /*function tinh(n) {
+        let s = 1;
+        for (let i = 1; i <= n; i++){
+            if (n%2===1){
+                s *= (2*i-1);
+            }else {
+                alert('Nhập lai so le');
+                break;
+            }
+        }
+        return s;
+    }
+    let n = parseInt(prompt('Nhap giá trị n: '));
+    console.log(tinh(n));*/
+
+    //bai 7
+    /*function tinhTong(m) {
+        let s = 0;
+        let mStr = String(m);
+        for (let i = 0; i < mStr.length; i++) {
+            let tongS = parseInt(mStr[i]);
+            s += tongS;
+        }
+        return s;
+    }
+    function tongTich(m){
+        let s = 1;
+        let mStr = String(m);
+        for (let i = 0; i < mStr.length; i++) {
+            let tichS = parseInt(mStr[i]);
+            s *= tichS;
+
+        }
+        return s
+    }
+    let m = +prompt('Nhập m: ');
+    console.log('Tong: '+tinhTong(m));
+    console.log('Tich: '+ tongTich(m));
+*/
+    //bai 09
+    /*function daoNguoc(arr){
+        let temp = '';
+        for (let i = arr.length - 1; i >= 0; i--) {
+            temp += arr[i];
+        }
+        return temp;
+
+    }
+    function inHoaThuong(arr) {
+        let temp = '';
+        for (let i = 0; i < arr.length; i++) {
+           let kiTu = arr[i];
+           let inHoa = kiTu.toUpperCase();
+           if (kiTu === inHoa){
+               kiTu = kiTu.toLowerCase();
+           }else {
+               kiTu = kiTu.toUpperCase();
+           }
+           temp += kiTu;
+        }
+        return temp;
+    }
+    let arr = prompt('Nhập chuỗi: ');
+
+    console.log('Chuổi được đổi là: ' + daoNguoc(arr));
+    console.log('Chuổi in hoa: ' + arr.toUpperCase());
+    console.log('Chuổi in thường: ' + arr.toLowerCase());
+    console.log('Chuỗi đổi qua in hoa và thường: ' + inHoaThuong(arr));*/
+
+    //Bai 10
+    /*function inXuongDong(arr) {
+        let tachChuoi = arr.split('');
+        for (let i = 0; i < arr.length; i++) {
+            tachChuoi = arr.split('');
+
+        }
+        return tachChuoi;
+    }
+    function demChuoi(arr) {
+        let tachChuoi = arr.split('');
+        for (let i = 0; i < arr.length; i++) {
+            tachChuoi = arr.split('');
+        }
+        let demKiTu = arr.length;
+        return demKiTu;
+    }
+    function tanXuatHien(arr) {
+        let tachChuoi = arr.split('');
+        for (let i = 0; i < arr.length; i++) {
+            tachChuoi = arr.split('');
+        }
+        let tanXuat = {};
+        for (let i = 0; i < arr.length; i++) {
+            if (tanXuat[arr[i]]){
+                tanXuat[arr[i]]++;
+            }else {
+                tanXuat[arr[i]] = 1;
+            }
+        }
+        return tanXuat;
+    }
+    let arr = prompt('Nhập chuỗi: ');
+    console.log(inXuongDong(arr));
+    console.log(demChuoi(arr));
+    console.log(tanXuatHien(arr));*/
+
+    //bai 11
+
+    let a = [];
+    for (let i = 0; i < 5; i++) {
+        let nhapA = parseInt(prompt(`Nhập phẩn tử cho mảng a tại ${i}: `));
+        a.push(nhapA);
+    }
+    function tongLe(a) {
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i]%2===1 && a[i] > 0){
+                sum += a[i];
+            }
+        }
+        return sum;
+    }
+
+    function tongChan(a) {
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            if (i%2 ===0){
+                sum += a[i];
+            }
+        }
+        return sum;
+    }
+
+    function timPhanTuK(a, k) {
+        let index = a.indexOf(k);
+        if (index !== -1){
+            alert('Phần tử ' +k + ' tại vị trí ' + index+ ' trong mảng');
+        }else {
+            alert('Phần tử ' +k+ ' không có trong mảng');
+        }
+
+    }
+
+    function sapXepTang(a) {
+        let temp = [];
+        for (let i = 0; i < a.length - 1; i++) {
+            for (let j = i + 1; j < a.length; j++) {
+                if(a[i] > a[j]){
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+
+            }
+
+        }
+        console.log(a);
+    }
+    function chenP(a, p) {
+        let i = 0;
+        while (i < a.length && a[i] < p){
+            i++;
+        }
+        a.splice(i, 0, p);
+        return a;
+    }
+    let k = parseInt(prompt('Nhập phần tu K muốn kiêm trong mảng a'));
+    let p = +prompt('Nhập P vào mảng: ');
+
+    console.log(a);
+    console.log(tongLe(a));
+    console.log(tongChan(a));
+    timPhanTuK(a, k);
+    sapXepTang(a);
+    console.log(chenP(a, p));
 </script>
 </body>
 </html>

@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let str = prompt('nhap chuoi');
+
+    function traVeKiTuNguyenAm(str) {
+        let nguyenAm = ['a','e','i','o','u','A','E','I','O','U'];
+        let traVe = [];
+        for (let i = 0; i < str.length; i++) {
+            if (nguyenAm.includes(str[i])){
+                traVe.push(str[i]);
+            }
+        }
+        return traVe;
+    }
+
+    console.log(traVeKiTuNguyenAm(str));
+</script>
 </body>
 </html>

@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let arr = [];
+    let n = prompt('Nhập số lượng phần tử trong mảng: ');
+    for (let i = 0; i < n; i++) {
+        arr[i]  = parseInt(prompt(`Nhập phần tử tại ${i} :`));
+    }
+
+    function beautifulArray(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i]%2 === 0){
+                return true;
+            }else {
+                return false;
+            }
+        }
+    }
+
+    console.log(beautifulArray(arr));
+
+</script>
 </body>
 </html>

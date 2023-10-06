@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let str = prompt('Nhap tham so:'); console.log(str, str.length);
+    // let str1 = str.split("");
+    // console.log(str1);
+    function checkString(str) {
+        let str1 = str.split("");
+        let inHoa = 0;
+        let inThuong = 0;
+        for (let i = 0; i < str1.length;i++){
+            if (str1[i] === str1[i].toUpperCase()){
+                inHoa++;
+            }else if (str1[i] === str1[i].toLowerCase()){
+                inThuong++;
+            }
+        }
+        return inHoa === inThuong;
+    }
+    console.log(checkString(str));
+</script>
 </body>
 </html>

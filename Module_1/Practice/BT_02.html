@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let n =parseInt(prompt('Nhap chieu dai cua mang'))
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt('Nhap phan tu cua mang');
+    }
+    console.log(arr);
+    function checkArray(arr) {
+        let arr1 = arr.length/2;
+        for (let i = 0; i < arr1; i++) {
+            if(arr[i]*arr[i] !== arr[i + arr1]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    console.log(checkArray(arr));
+
+</script>
 </body>
 </html>

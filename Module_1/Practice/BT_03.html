@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let n = +prompt('Nhap do dai cua mang');
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt(`Nhap phan tu tai vi tri ${i} trong mang: `);
+    }
+
+    function checkTangGiam(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[i + 1]){
+                return 'Ok';
+            }else if (arr[i] < arr[i + 1]){
+                return 'Ok';
+            }
+        }
+        return 'No';
+    }
+
+    console.log(checkTangGiam(arr));
+</script>
 </body>
 </html>
